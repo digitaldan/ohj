@@ -5,6 +5,7 @@ const items = require('../items')
  * Condition that wraps a function to determine whether if passes
  * @memberof fluent
  * @hideconstructor
+ * @ignore
  */
 class FunctionConditionConf {
     /**

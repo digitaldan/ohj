@@ -113,27 +113,57 @@ class Logger {
 
     /**
      * Logs at ERROR level.
+     * @example
+     * log.error('The widget was created as {}', widget);
+     *
      * @see atLevel
-     */
+     * @param {String|Error} msg the message to log, possibly with object placeholders
+     * @param {Object[]} [objects] the objects to substitute into the log message     */
     error() { this.atLevel('error', ...arguments) }
+
     /**
      * Logs at ERROR level.
+     * @example
+     * log.warn('The widget was created as {}', widget);
+     *
      * @see atLevel
+     * @param {String|Error} msg the message to log, possibly with object placeholders
+     * @param {Object[]} [objects] the objects to substitute into the log message
      */
     warn() { this.atLevel('warn', ...arguments) }
+
     /**
      * Logs at INFO level.
+     * @example
+     * log.info('The widget was created as {}', widget);
+     *
      * @see atLevel
+     * @param {String|Error} msg the message to log, possibly with object placeholders
+     * @param {Object[]} [objects] the objects to substitute into the log message
      */
     info() { this.atLevel('info', ...arguments) }
+
     /**
      * Logs at DEBUG level.
+     *
+     * @example
+     * log.debug('The widget was created as {}', widget);
+     *
      * @see atLevel
+     * @param {String|Error} msg the message to log, possibly with object placeholders
+     * @param {Object[]} [objects] the objects to substitute into the log message
      */
     debug() { this.atLevel('debug', ...arguments) }
+
     /**
      * Logs at TRACE level.
+     *
+     * @example
+     * log.trace('The widget was created as {}', widget);
+     *
      * @see atLevel
+     * @param {String|Error} msg the message to log, possibly with object placeholders
+     * @param {Object[]} [objects] the objects to substitute into the log message
      */
     trace() { this.atLevel('trace', ...arguments) }
 
