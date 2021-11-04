@@ -203,22 +203,6 @@ class Logger {
     get name() { return this._name }
 }
 
-let appenderForLevel = null
-//attempt to load & cache appender as module
-let getAppenderForLevel = function(){
-    if(appenderForLevel === null) {
-        appenderForLevel = () => null;
-
-        try {
-            appenderForLevel = require('log_appenders').forLevel;
-        } catch(e) {
-            new Logger("log", () => null).debug("No appenders found for log", e);
-        }
-    }
-
-    return appenderForLevel;
-}
-
 /**
  * Creates a logger.
  * @see Logger

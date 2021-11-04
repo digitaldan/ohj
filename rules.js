@@ -87,7 +87,7 @@ const getGroupsForItem = function (ruleConfig) {
  * rules.JSRule({
  *  name: "my_new_rule",
  *  description": "this rule swizzles the swallows",
- *  triggers: triggers.GenericCronTrigger("0 30 16 * * ? *"),
+ *  triggers: [ triggers.GenericCronTrigger("0 30 16 * * ? *") ] ,
  *  execute: triggerConfig => { //do stuff }
  * });
  *

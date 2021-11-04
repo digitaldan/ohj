@@ -434,19 +434,19 @@ const getItemsByTag = (...tagNames) => {
 }
 
 /**
- * Gets all Openhab Items.
+ * Gets all Openhab Items
  * @return {OHItem[]} all items
  * @alias module:ohj/items.getItems
  */
- const getItems = () => {
+const getItems = () => {
     return utils.javaSetToJsArray(itemRegistry.getItems()).map(i => new OHItem(i));
 }
 
-    /**
-     * Helper function to ensure an item name is valid. All invalid characters are replaced with an underscore.
-     * @param {String} s the name to make value
-     * @returns {String} a valid item name
-     */
+/**
+ * Helper function to ensure an item name is valid. All invalid characters are replaced with an underscore.
+ * @param {String} s the name to make value
+ * @returns {String} a valid item name
+ */
 const safeItemName = s => s.
         replace(/[\"\']/g, ''). //delete
         replace(/[^a-zA-Z0-9]/g, '_'); //replace with underscore
@@ -456,6 +456,7 @@ module.exports = {
     getItem,
     addItem,
     getItemsByTag,
+    getItems,
     replaceItem,
     createItem,
     removeItem,

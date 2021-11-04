@@ -1,9 +1,10 @@
 {
-    "name": "ohj",
+    "name": "oh",
     "version": "0.1.0",
-    "description": "JavaScript Library for Openhan",
+    "description": "JavaScript Library for openHAB",
     "private": false,
     "license": "EPL-2.0",
+    "main": "dist/oh.js",
     "repository": {
         "type": "git",
         "url": "git://github.com/jpg0/ohj.git"
