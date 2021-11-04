@@ -43,7 +43,7 @@ module.exports = {
      * @example
      * ChannelEventTrigger('astro:sun:local:rise#event', 'START')
      * 
-     * @name ChannelEventTrigger
+    * @function ChannelEventTrigger
      * @memberof triggers
      * @param {String} channel the name of the channel
      * @param {String} event the name of the event to listen for
@@ -61,7 +61,7 @@ module.exports = {
      * @example
      * ItemStateChangeTrigger('my_item', 'OFF', 'ON')
      * 
-     * @name ItemStateChangeTrigger
+     * @function ItemStateChangeTrigger
      * @memberof triggers
      * @param {String} itemName the name of the item to monitor for change
      * @param {String} [oldState] the previous state of the item
@@ -80,7 +80,7 @@ module.exports = {
      * @example
      * ItemStateUpdateTrigger('my_item', 'OFF')
      * 
-     * @name ItemStateUpdateTrigger
+     * @function ItemStateUpdateTrigger
      * @memberof triggers
      * @param {String} itemName the name of the item to monitor for change
      * @param {String} [state] the new state of the item
@@ -97,7 +97,7 @@ module.exports = {
      * @example
      * ItemCommandTrigger('my_item', 'OFF')
      * 
-     * @name ItemCommandTrigger
+     * @function ItemCommandTrigger
      * @memberof triggers
      * @param {String} itemName the name of the item to monitor for change
      * @param {String} [command] the command received
@@ -114,7 +114,7 @@ module.exports = {
      * @example
      * GroupStateChangeTrigger('my_group', 'OFF', 'ON')
      * 
-     * @name GroupStateChangeTrigger
+     * @function GroupStateChangeTrigger
      * @memberof triggers
      * @param {String} groupName the name of the group to monitor for change
      * @param {String} [oldState] the previous state of the group
@@ -133,7 +133,7 @@ module.exports = {
      * @example
      * GroupStateUpdateTrigger('my_group', 'OFF')
      * 
-     * @name GroupStateUpdateTrigger
+     * @function GroupStateUpdateTrigger
      * @memberof triggers
      * @param {String} groupName the name of the group to monitor for change
      * @param {String} [state] the new state of the group
@@ -149,7 +149,7 @@ module.exports = {
   * @example
   * GroupCommandTrigger('my_group', 'OFF')
   * 
-  * @name GroupCommandTrigger
+  * @function GroupCommandTrigger
   * @memberof triggers
   * @param {String} groupName the name of the group to monitor for change
   * @param {String} [command] the command received
@@ -167,7 +167,7 @@ module.exports = {
      * @example
      * GenericCronTrigger('0 30 16 * * ? *')
      * 
-     * @name GenericCronTrigger
+     * @function GenericCronTrigger
      * @memberof triggers
      * @param {String} expression the cron expression defining the triggering schedule
      */
@@ -181,7 +181,7 @@ module.exports = {
      * @example
      * TimeOfDayTrigger('19:00')
      * 
-     * @name TimeOfDayTrigger
+     * @function TimeOfDayTrigger
      * @memberof triggers
      * @param {String} time the time expression defining the triggering schedule
      */
@@ -196,7 +196,7 @@ module.exports = {
      * @example
      * ThingStatusUpdateTrigger('some:thing:uuid','OFFLINE')
      * 
-     * @name ThingStatusUpdateTrigger
+     * @function ThingStatusUpdateTrigger
      * @memberof triggers
      * @param {String} thingUID the name of the thing to monitor for a status updating
      * @param {String} [status] the optional status to monitor for
@@ -213,7 +213,7 @@ module.exports = {
     * @example
     * ThingStatusChangeTrigger('some:thing:uuid','ONLINE','OFFLINE')
     * 
-    * @name ThingStatusChangeTrigger
+    * @function ThingStatusChangeTrigger
     * @memberof triggers
     * @param {String} thingUID the name of the thing to monitor for a status change
     * @param {String} [status] the optional status to monitor for
@@ -230,11 +230,19 @@ module.exports = {
      * Creates a trigger that fires if a given start level is reached by the system
      * 
      * @example
-     * SystemStartlevelTrigger('100') //Startup Complete
-     * 
-     * @name SystemStartlevelTrigger
+     * SystemStartlevelTrigger(40)  //Rules loaded
+     * ...
+     * SystemStartlevelTrigger(50)  //Rule engine started
+     * ...
+     * SystemStartlevelTrigger(70)  //User interfaces started
+     * ...
+     * SystemStartlevelTrigger(80)  //Things initialized
+     * ...
+     * SystemStartlevelTrigger(100) //Startup Complete
+     *
+     * @function SystemStartlevelTrigger
      * @memberof triggers
-     * @param {String} startlevel the name of the thing to monitor for a status updating
+     * @param {String} startlevel the system start level to be triggered on
      * @param {String} [triggerName] the name of the trigger to create
      */
     SystemStartlevelTrigger: (startlevel, triggerName) => createTrigger("core.SystemStartlevelTrigger", triggerName, {
