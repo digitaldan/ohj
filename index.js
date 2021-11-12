@@ -19,5 +19,6 @@ module.exports = {
     get utils() { return require('./utils') },
     get osgi() { return require('./osgi') },
     get provider() { return require('./provider') },
-    get itemchannellink() { return require('./itemchannellink') }
+    get itemchannellink() { return require('./itemchannellink') },
+    get console() { return require('./console') }
 }
